@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Case Study</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    </head>
+<body>
+<center>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 header">
+       <h2>MobileNet VS Google Lens</h2> 
+    </div><br><br>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main_div">
+        <img src="https://4.imimg.com/data4/BB/QU/MY-23659049/kids-toys-bikes-cars-automobile-500x500.jpg">
+        <h3>Output On Google Lens: <span id="lens1"></span></h3>
+        <h3>Output On MobileNet: <span id="mobilenet1"></span></h3>
+    </div><br><br>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main_div">
+        <img src="https://maplestore.in/wp-content/uploads/2020/04/iPhone-11-Pro-Clear-Case4.png">
+        <h3>Output On Google Lens: <span id="lens2"></span></h3>
+        <h3>Output On MobileNet: <span id="mobilenet2"></span></h3>
+    </div><br><br>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main_div">
+        <img src="data:image/jpeg;base64,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">
+        <h3>Output On Google Lens: <span id="lens3"></span></h3>
+        <h3>Output On MobileNet: <span id="mobilenet3"></span></h3>
+    </div><br><br>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main_div">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61WeQOf7d6L._SL1100_.jpg">
+        <h3>Output On Google Lens: <span id="lens4"></span></h3>
+        <h3>Output On MobileNet: <span id="mobilenet4"></span></h3>
+    </div><br><br>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 main_div">
+        <img src="https://5.imimg.com/data5/XS/LT/MY-517376/fancy-cup-500x500.jpg">
+        <h3>Output On Microsoft Azure: <span id="azure5"></span></h3>
+        <h3>Output On MobileNet: <span id="mobilenet5"></span></h3>
+    </div><br><br>
+</center>
+</body>
+</html>
